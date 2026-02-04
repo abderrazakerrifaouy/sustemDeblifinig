@@ -10,3 +10,5 @@ class AdmineController extends Controller
         echo "hello " ;
     }
 }
+
+
