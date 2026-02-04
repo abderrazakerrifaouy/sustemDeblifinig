@@ -36,6 +36,7 @@
                     <div class="mt-1 relative group">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none transition-colors group-focus-within:text-indigo-600">
                             <i class="fas fa-at text-slate-400"></i>
+                            <h1>hello</h1>
                         </div>
                         <input id="email" name="email" type="email" required
                             class="block w-full rounded-xl border border-slate-300 pl-10 pr-4 py-2.5 text-slate-900 placeholder-slate-400 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
@@ -51,7 +52,6 @@
                         <input id="password" name="password" type="password" required
                             class="block w-full rounded-xl border border-slate-300 pl-10 pr-4 py-2.5 text-slate-900 placeholder-slate-400 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
                             placeholder="••••••••">
-                            header
                     </div>
                 </div>
 
