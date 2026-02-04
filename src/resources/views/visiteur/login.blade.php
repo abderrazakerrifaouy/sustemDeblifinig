@@ -42,7 +42,6 @@
                             placeholder="nom@exemple.com">
                     </div>
                 </div>
-
                 <div>
                     <label for="password" class="block text-sm font-medium text-slate-700">Mot de passe</label>
                     <div class="mt-1 relative group">
@@ -62,8 +61,6 @@
                         <label for="remember" class="ml-2 block text-sm text-slate-700 cursor-pointer">Rester connecté</label>
                     </div>
                 </div>
-                <div>hi</div>
-
 
                 <button type="submit"
                     class="relative group w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 shadow-lg shadow-indigo-200">
