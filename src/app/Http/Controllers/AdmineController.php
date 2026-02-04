@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AdmineController extends Controller
 {
     public function index(){
-        echo "hello " ;
+        echo "clear" ;
     }
 }
 
