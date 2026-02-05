@@ -66,10 +66,10 @@
 <div id="modal-user" class="hidden fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-[2.5rem] max-w-md w-full p-10 shadow-2xl">
         <h2 class="text-2xl font-black text-gray-900 mb-6 italic uppercase">Nouveau Compte</h2>
-        <form action="process_user.php" method="POST" class="space-y-4">
+        <form action="{{ route('user.create') }}" method="POST" class="space-y-4">
+            @csrf
             <div class="grid grid-cols-2 gap-4">
-                <input type="text" name="firstname" placeholder="Prénom" class="w-full px-5 py-3 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-[#ff002b] text-sm">
-                <input type="text" name="lastname" placeholder="Nom" class="w-full px-5 py-3 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-[#ff002b] text-sm">
+                <input type="text" name="name" placeholder="Nom complet" class="w-full px-5 py-3 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-[#ff002b] text-sm">
             </div>
             <input type="email" name="email" placeholder="Email Simplon" class="w-full px-5 py-3 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-[#ff002b] text-sm">
 
