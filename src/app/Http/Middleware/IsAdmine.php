@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Is_admine
+class IsAdmine
 {
     /**
      * Handle an incoming request.

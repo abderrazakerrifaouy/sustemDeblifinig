@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->foreignId('formation_id')->constrained('formations')->onDelete('cascade');
+            $table->integer('anneDetudiant')->default(2026);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
