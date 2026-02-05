@@ -29,16 +29,16 @@
             <div class="pt-4 border-t border-gray-50 mt-4">
                 <p class="px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Structure</p>
                 <div class="space-y-1">
-                    <a href="manage_classes.php" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
+                    <a href="/manage_classes" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
                         <i class="fas fa-school w-5 text-center"></i>
                         <span>Gérer classes</span> </a>
-                    <a href="assign_teachers.php" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
+                    <a href="/assign_teachers" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
                         <i class="fas fa-user-tie w-5 text-center"></i>
                         <span>Affecter formateurs</span> </a>
-                    <a href="manage_sprints.php" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
+                    <a href="/manage_sprints" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
                         <i class="fas fa-redo w-5 text-center"></i>
                         <span>Gérer Sprints</span> </a>
-                    <a href="manage_competences.php" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
+                    <a href="/manage_competences" class="flex items-center gap-3 px-4 py-2.5 text-gray-500 hover:text-[#ff002b] hover:bg-gray-50 rounded-xl transition text-sm font-medium">
                         <i class="fas fa-award w-5 text-center"></i>
                         <span>Gérer Compétences</span> </a>
                 </div>
