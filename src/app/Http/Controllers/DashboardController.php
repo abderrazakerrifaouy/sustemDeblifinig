@@ -12,8 +12,10 @@ class DashboardController extends Controller
     }
     public function manageUsers(){
         $users = User::all()->where('role', '!=', 'admin');
+
         return view('admin.manage_users', compact('users'));
     }
 }
+
 
 
