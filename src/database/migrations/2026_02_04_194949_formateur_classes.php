@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('formateur_classes', function (Blueprint $table) {
+    $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+    $table->foreignId('class_id')->constrained('class')->onDelete('cascade');
+    $table->boolean('is_principal')->default(false); // Pour le Formateur Principal
+    $table->primary(['user_id', 'class_id']);
+});
     }
 
     /**
@@ -22,3 +27,4 @@ return new class extends Migration
         //
     }
 };
+
