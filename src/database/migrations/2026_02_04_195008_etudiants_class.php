@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('etudiants_class', function (Blueprint $table) {
+    $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+    $table->foreignId('class_id')->constrained('class')->onDelete('cascade');
+    $table->primary(['user_id', 'class_id']);
+}); 
     }
 
     /**
