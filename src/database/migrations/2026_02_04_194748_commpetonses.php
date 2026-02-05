@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('commpetonse', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->foreignId('formation_id')->constrained('formations')->onDelete('cascade');
+        $table->timestamps();
+});
     }
 
     /**
