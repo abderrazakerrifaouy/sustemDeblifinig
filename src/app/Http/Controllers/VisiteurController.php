@@ -17,7 +17,8 @@ class VisiteurController extends Controller
             if (auth()->attempt($credentials)) {
                 return redirect()->intended('dashboard');
             }
-
-            echo "Invalid credentials";
+            return back()->withErrors([
+                'email' => 'Invalid credentials.',
+            ]);
         }
 }
