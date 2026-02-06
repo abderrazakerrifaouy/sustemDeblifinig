@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\formation;
+use App\Models\classe;
 
 class DashboardController extends Controller
 {
@@ -21,9 +22,13 @@ class DashboardController extends Controller
         return view('admin.manage_formation', compact('formations'));
     }
     public function manageClasses(){
-        return view('admin.manage_classes');
+        $classes = classe::all();
+        $teachers = User::all()->where('role', 'Formateur');
+        $formations = formation::all();
+        return view('admin.manage_classes', compact('classes', 'teachers', 'formations'));
     }
 }
+
 
 
 
