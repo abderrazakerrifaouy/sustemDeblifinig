@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class formation extends Model
 {
     protected $fillable = [
-        'name',
+        'title',
         'is_active',
     ];
 
@@ -24,3 +24,4 @@ class formation extends Model
         return $this->hasMany(sprint::class, 'formation_id');
     }
 }
+
