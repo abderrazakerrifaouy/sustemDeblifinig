@@ -21,4 +21,14 @@ class VisiteurController extends Controller
                 'email' => 'Invalid credentials.',
             ]);
         }
+
+    public function home()
+    {
+        if (auth()->check()) {
+            return redirect()->route('dashboard');
+        }if (auth()->guest()) {
+            return redirect()->route('login');
+        }
+    }
+    
 }
