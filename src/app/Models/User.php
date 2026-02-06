@@ -17,10 +17,12 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    //fexed error inssert user sone role
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -46,3 +48,4 @@ class User extends Authenticatable
         ];
     }
 }
+
