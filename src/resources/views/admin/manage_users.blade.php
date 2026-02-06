@@ -4,10 +4,9 @@
 <div class="flex min-h-screen bg-gray-50">
     @include('partials.sidebar_admin')
 
-    <div class="flex-1 ml-64"> {{-- Ajuste ml-64 selon la largeur de ta sidebar --}}
+    <div class="flex-1 ml-64">
         @include('partials.header')
 
-        {{-- MESSAGES D'ALERTE --}}
         <div class="px-8 mt-6">
             @if(session('success'))
                 <div id="success-alert" class="flex items-center p-4 mb-4 text-green-800 rounded-2xl bg-green-50 border border-green-100 animate-fade-in">
@@ -25,7 +24,6 @@
         </div>
 
         <div class="p-8 max-w-7xl mx-auto">
-            {{-- HEADER DE LA PAGE --}}
             <div class="flex justify-between items-center mb-10">
                 <div>
                     <h1 class="text-3xl font-black text-gray-900 italic uppercase tracking-tighter">
@@ -116,7 +114,7 @@
     </div>
 </div>
 
-{{-- MODAL CREATE USER --}}
+
 <div id="modal-user" class="hidden fixed inset-0 bg-gray-900/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-[3rem] max-w-md w-full p-10 shadow-2xl transform transition-all animate-zoom-in">
         <div class="flex justify-between items-center mb-8">
