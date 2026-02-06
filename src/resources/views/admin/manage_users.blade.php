@@ -8,16 +8,20 @@
 
         <div class="px-8 mt-6">
             @if(session('success'))
-                <div id="success-alert" class="flex items-center p-4 mb-4 text-green-800 rounded-2xl bg-green-50 border border-green-100 animate-fade-in">
+                <div id="success-alert" class="flex items-center p-4 mb-4 text-green-800 rounded-2xl bg-green-50 border border-green-100 animate-fade-in absolute top-24 left-1/2 transform -translate-x-1/2">
                     <i class="fas fa-check-circle mr-2"></i>
                     <span class="text-sm font-bold">{{ session('success') }}</span>
                 </div>
             @endif
 
-            @if(session('error'))
-                <div id="error-alert" class="flex items-center p-4 mb-4 text-red-800 rounded-2xl bg-red-50 border border-red-100 animate-fade-in">
-                    <i class="fas fa-exclamation-circle mr-2"></i>
-                    <span class="text-sm font-bold">{{ session('error') }}</span>
+            @if($errors->any())
+                <div id="error-alert" class="flex items-center p-4 mb-4 text-red-800 rounded-2xl bg-red-50 border border-red-100 animate-fade-in absolute top-24 left-1/2 transform -translate-x-1/2" >
+                    @foreach ($errors->all() as $error)
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <span class="text-sm font-bold">{{ $error }}</span>
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
@@ -146,21 +150,25 @@
                            class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-[#ff002b] focus:bg-white outline-none transition-all text-sm font-bold">
                 </div>
                 <div>
-                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 mb-1 block tracking-widest">Rôle</label>
-                    <select name="role" required
-                            class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-[#ff002b] focus:bg-white outline-none transition-all text-sm font-black text-gray-700">
-                        <option value="Etudiant">Étudiant</option>
-                        <option value="Formateur">Formateur</option>
-                    </select>
+                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 mb-1 block tracking-widest">Confirmer le mot de passe</label>
+                    <input type="password" name="password_confirmation" required placeholder="••••••••"
+                           class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-[#ff002b] focus:bg-white outline-none transition-all text-sm font-bold">
                 </div>
             </div>
-
+            <div>
+                <label class="text-[10px] font-black text-gray-400 uppercase ml-2 mb-1 block tracking-widest">Rôle</label>
+                <select name="role" required
+                        class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-[#ff002b] focus:bg-white outline-none transition-all text-sm font-bold">
+                    <option value="" disabled selected>Choisissez un rôle</option>
+                    <option value="Formateur">Formateur</option>
+                    <option value="Etudiant">Étudiant</option>
+                </select>
+            </div>
             <div class="pt-6 flex gap-4">
                 <button type="button" onclick="document.getElementById('modal-user').classList.add('hidden')"
                         class="flex-1 py-4 text-gray-400 font-black uppercase text-xs tracking-widest hover:text-gray-900 transition">
                     Fermer
                 </button>
-
                 <button type="submit"
                         class="flex-[2] py-4 bg-[#ff002b] text-white rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-lg shadow-red-200 hover:bg-red-600 transition-all">
                     Créer l'accès
