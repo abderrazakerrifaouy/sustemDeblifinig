@@ -41,7 +41,13 @@
                         <input id="email" name="email" type="email" required
                             class="block w-full rounded-xl border border-slate-300 pl-10 pr-4 py-2.5 text-slate-900 placeholder-slate-400 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
                             placeholder="nom@exemple.com">
+
                     </div>
+                    <p class="mt-2 text-xs text-red-600">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </p>
                 </div>
                 <div>
                     <label for="password" class="block text-sm font-medium text-slate-700">Mot de passe</label>
