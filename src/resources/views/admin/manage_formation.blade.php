@@ -1,12 +1,10 @@
 @extends('layoute')
 
 @section('content')
-<div class="flex min-h-screen bg-gray-50">
+<div class=" min-h-screen bg-gray-50">
     @include('partials.sidebar_admin')
 
-    <div class="flex-1 ml-64">
-        @include('partials.header')
-
+    <div class="flex-1">
         <div class="p-8 max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div>
