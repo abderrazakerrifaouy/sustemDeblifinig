@@ -4,9 +4,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/Z1srPv7lOy9C27hHQ+Xp8a4MxAQ5a+W5U8nW9NfXfG0K4jK0yT8jv1p6K5e3b0U6Ukg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>@yield('title', 'SimplonLine')</title>
-  <script src="https://cdn.tailwindcss.com"></script>  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
   <body class="h-full font-sans antialiased text-gray-900">
 
     @yield('sidebar')
