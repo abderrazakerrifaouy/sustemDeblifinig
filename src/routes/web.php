@@ -19,6 +19,6 @@ Route::middleware('auth' , IsAdmine::class)->group(function () {
     Route::get('/manage_users', [DashboardController::class, 'manageUsers'])->name('manage.users');
     Route::post('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::get('/manage_formations', [DashboardController::class, 'manageFormations'])->name('manage.formations');
-    Route::post('/formation/create', [FormationController::class, 'create'])->name('formation.store');
+    Route::post('/formation/create', [FormationController::class, 'store'])->name('formation.store');
     Route::get('/manage_classes', [DashboardController::class, 'manageClasses'])->name('manage.classes');
 });
