@@ -124,6 +124,11 @@
                         class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-[#ff002b] font-bold text-sm">
                 </div>
                 <div>
+                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 mb-1 block tracking-widest"> anne Detudiant</label>
+                    <input type="text" name="anne" required
+                        class="w-full px-5 py-3.5 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-[#ff002b] font-bold text-sm">
+                </div>
+                <div>
                     <label
                         class="text-[10px] font-black text-gray-400 uppercase ml-2 mb-1 block tracking-widest">Formation</label>
                     <select name="formation_id"
