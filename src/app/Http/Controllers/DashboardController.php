@@ -4,31 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\formation;
-use App\Models\classe;
+use App\Models\Formation;
+use App\Models\Classe;
+
+
 
 class DashboardController extends Controller
 {
-    public function Admine(){
+    public function Admine()
+    {
         return view('admin.index');
     }
-    public function manageUsers(){
+    public function manageUsers()
+    {
         $users = User::all()->where('role', '!=', 'admin');
 
         return view('admin.manage_users', compact('users'));
     }
-    public function manageFormations(){
-        $formations = formation::all();
+    public function manageFormations()
+    {
+        $formations = Formation::all();
         return view('admin.manage_formation', compact('formations'));
     }
-    public function manageClasses(){
-        $classes = classe::all();
-        $teachers = User::all()->where('role', 'Formateur');
-        $formations = formation::all();
-        return view('admin.manage_classes', compact('classes', 'teachers', 'formations'));
+    public function manageClasses()
+    {
+        $classes = Classe::with([
+            'formation',
+            'formateurs' => function ($q) {
+                $q->where('role', 'Formateur');
+            },
+        ])->get();
+
+        $formations = Formation::all();
+
+        dd($classes);
+        die();
+        return view('admin.manage_classes', compact('classes', 'formations'));
     }
 }
-
-
-
-
