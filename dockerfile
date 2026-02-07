@@ -8,13 +8,17 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     iputils-ping \
     npm \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql
-
-RUN a2enmod rewrite
+    git \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql \
+    && a2enmod rewrite
 
 WORKDIR /var/www/html
 
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+
 EXPOSE 80
+
+USER www-data
