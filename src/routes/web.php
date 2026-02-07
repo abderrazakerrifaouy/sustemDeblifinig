@@ -5,6 +5,7 @@ use App\Http\Controllers\VisiteurController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClasseController;
 use App\Http\Middleware\IsAdmine;
 
 
