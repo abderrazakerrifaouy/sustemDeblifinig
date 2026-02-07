@@ -11,15 +11,15 @@ class ClasseController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'formation_id' => 'required|exists:formations,id',
-            'teacher_id' => 'required|exists:users,id',
+            'anne' => 'required|integer|min:2020|max:2030',
         ]);
 
         Classe::create([
             'name' => $request->name,
             'formation_id' => $request->formation_id,
-            'teacher_id' => $request->teacher_id,
+            'anneDetudiant' => $request->anne,
         ]);
         return redirect()->back()->with('success', 'Classe created');
     }
-    
+
 }
