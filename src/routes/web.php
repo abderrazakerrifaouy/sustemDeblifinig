@@ -23,8 +23,12 @@ Route::middleware('auth' , IsAdmine::class)->group(function () {
     Route::post('/formation/create', [FormationController::class, 'store'])->name('formation.store');
     Route::get('/manage_classes', [DashboardController::class, 'manageClasses'])->name('manage.classes');
     Route::post('/classe/create', [ClasseController::class, 'store'])->name('classes.store');
+    Route::get('/classes/{id}', [ClasseController::class, 'show'])->name('admin.classes.show');
+    Route::delete('/classes/{id}', [ClasseController::class, 'destroy'])->name('admin.classes.destroy');
+    Route::post('/classes/{id}/formateurs', [ClasseController::class, 'addFormateur'])->name('admin.classes.formateurs.store');
 });
 
 
 Route::get('/', [VisiteurController::class, 'home'])->name('user.home');
+
 
