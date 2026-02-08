@@ -18,22 +18,14 @@ class User extends Authenticatable
      * @var list<string>
      */
     //fexed error inssert user sone role
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
-    ];
+    protected $fillable = ['name', 'email', 'password', 'role'];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var list<string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     /**
      * Get the attributes that should be cast.
@@ -46,6 +38,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function classes()
+    {
+        return $this->belongsToMany(Classe::class, 'formateur_classes' , 'class_id', 'user_id')->withPivot('is_principal');
     }
 }
 
