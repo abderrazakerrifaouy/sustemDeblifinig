@@ -23,11 +23,10 @@ class UserController extends Controller
             'password' => Hash::make($validatedData['password']),
             'role' => $validatedData['role'],
         ]);
-        dd($user);
-        die();
         if (!$user) {
             return redirect()->back()->with('error', 'Erreur lors de la création de l\'utilisateur.');
         }
         return redirect()->route('manage.users')->with('success', 'Utilisateur créé avec succès.');
     }
 }
+
