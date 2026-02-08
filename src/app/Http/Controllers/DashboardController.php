@@ -34,11 +34,8 @@ class DashboardController extends Controller
                 $q->where('role', 'Formateur');
             },
         ])->get();
-
         $formations = Formation::all();
-
-        dd($classes);
-        die();
         return view('admin.manage_classes', compact('classes', 'formations'));
     }
+    
 }
