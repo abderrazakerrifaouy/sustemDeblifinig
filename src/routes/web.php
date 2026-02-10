@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\CommpetonseController;
 use App\Http\Middleware\IsAdmine;
 
 
@@ -26,9 +27,11 @@ Route::middleware('auth' , IsAdmine::class)->group(function () {
     Route::get('/classes/{id}', [ClasseController::class, 'show'])->name('admin.classes.show');
     Route::delete('/classes/{id}', [ClasseController::class, 'destroy'])->name('admin.classes.destroy');
     Route::post('/classes/{id}/formateurs', [ClasseController::class, 'addFormateur'])->name('admin.classes.formateurs.store');
+    Route::get('/manage_competences/{id}', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
+    Route::get('/manage_competences', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
+    Route::post('/competences/create', [CommpetonseController::class, 'store'])->name('competences.store');
 });
-
-
+    
 Route::get('/', [VisiteurController::class, 'home'])->name('user.home');
 
 
