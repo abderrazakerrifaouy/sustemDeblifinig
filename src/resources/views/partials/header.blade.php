@@ -17,13 +17,7 @@
             <div class="w-9 h-9 bg-gray-100 rounded-full flex items-center justify-center border border-gray-200">
                 <i class="fas fa-user text-gray-400 text-sm"></i>
             </div>
-
-            <form action="/logout" method="GET" class="ml-2">
-                <button type="submit"
-                    class="flex items-center justify-center w-9 h-9 rounded-xl text-gray-400 hover:text-white hover:bg-[#ff002b] transition-all duration-200 group"
-                    title="Déconnexion">
-                   <img width="24" height="24" src="https://img.icons8.com/forma-bold/24/exit.png" alt="exit"/></button>
-            </form>
         </div>
     </div>
 </header>
+
