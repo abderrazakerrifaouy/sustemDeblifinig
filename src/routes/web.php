@@ -30,8 +30,9 @@ Route::middleware('auth' , IsAdmine::class)->group(function () {
     Route::get('/manage_competences/{id}', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
     Route::get('/manage_competences', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
     Route::post('/competences/create', [CommpetonseController::class, 'store'])->name('competences.store');
+    Route::get()
 });
-    
+
 Route::get('/', [VisiteurController::class, 'home'])->name('user.home');
 
 
