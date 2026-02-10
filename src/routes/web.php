@@ -30,7 +30,8 @@ Route::middleware('auth' , IsAdmine::class)->group(function () {
     Route::get('/manage_competences/{id}', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
     Route::get('/manage_competences', [DashboardController::class, 'manageCompetences'])->name('manage_competences');
     Route::post('/competences/create', [CommpetonseController::class, 'store'])->name('competences.store');
-    Route::get('gitgoblin summon')
+    Route::get('/manage_sprints', [DashboardController::class, 'manageSprints'])->name('manage.sprints');
+    Route::post('/sprint/create', [SprintController::class, 'store'])->name('sprint.store');
 });
 
 Route::get('/', [VisiteurController::class, 'home'])->name('user.home');
