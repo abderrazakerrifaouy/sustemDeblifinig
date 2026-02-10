@@ -49,5 +49,5 @@ class DashboardController extends Controller
         $competons = Commpetonse::where('formation_id', $selectedFormationId)->get();
         return view('admin.manage_competences', compact('formations' , 'selectedFormationId', 'competons'));
     }
-
+    
 }
