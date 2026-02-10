@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Formation;
 use App\Models\Classe;
-
-
+use App\Models\Commpetonse;
 
 class DashboardController extends Controller
 {
@@ -37,5 +36,18 @@ class DashboardController extends Controller
         $formations = Formation::all();
         return view('admin.manage_classes', compact('classes', 'formations'));
     }
-    
+
+    public function manageCompetences($id = null)
+    {
+
+        $formations = Formation::all();
+        if ($id) {
+            $selectedFormationId = $id;
+        } else {
+            $selectedFormationId = $formations->first()->id ?? null;
+        }
+        $competons = Commpetonse::where('formation_id', $selectedFormationId)->get();
+        return view('admin.manage_competences', compact('formations' , 'selectedFormationId', 'competons'));
+    }
+
 }
