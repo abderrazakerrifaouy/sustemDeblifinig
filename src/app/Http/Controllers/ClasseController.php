@@ -37,26 +37,22 @@ class ClasseController extends Controller
         ])
             ->where('role', 'Formateur')
             ->get();
-        // dd($formateurs);
-        // die();
+        
         $classe = Classe::with('formation', 'formateurs')->findOrFail($id);
         return view('admin.show_classe', compact('classe' , 'formateurs'));
     }
     public function addFormateur(Request $request, $id)
     {
         $validated = $request->validate([
-            'formateur_id'  ,
-            'is_principal'  ,
+            'formateur_id' => 'required|exists:users,id',
+            'is_principal' => 'required|boolean',
         ]);
-        dd($validated);
-        die();
         $classe = Classe::findOrFail($id);
         $classe->formateurs()->attach($validated['formateur_id'], [
             'is_principal' => $validated['is_principal'],
         ]);
-        dd($classe);
-        die();
+
         return redirect()->back()->with('success', 'Formateur ajouté avec succès !');
-        
+
     }
 }
