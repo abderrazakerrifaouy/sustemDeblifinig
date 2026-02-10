@@ -8,7 +8,6 @@
     <title>@yield('title', 'SimplonLine')</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="h-full font-sans antialiased text-gray-900">
 
     @yield('sidebar')
@@ -32,7 +31,7 @@
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
 
-                document.getElementById('is_principal').value = isPrincipal ;
+                document.getElementById('is_principal').value = isPrincipal ? 1 : 0 ;
                 document.getElementById('modalTitle').innerText =
                     isPrincipal ? 'Ajouter Formateur Principal' : 'Ajouter Formateur Adjoint';
             }
@@ -42,7 +41,10 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
-
+        function toggleModal() {
+        const modal = document.getElementById('modal-competence');
+        modal.classList.toggle('hidden');
+    }
     </script>
 </body>
 
