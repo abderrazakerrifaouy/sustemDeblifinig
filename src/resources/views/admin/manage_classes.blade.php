@@ -8,7 +8,6 @@
 
 @section('content')
 
-{{-- Messages --}}
 @if (session('success'))
 <div class="mb-5 p-4 rounded-2xl bg-green-50 text-green-700 font-bold text-sm shadow-sm">
     {{ session('success') }}
@@ -33,7 +32,6 @@
 
 <div class="p-8 max-w-7xl mx-auto">
 
-    {{-- Header --}}
     <div class="flex justify-between items-center mb-10">
         <div>
             <h1 class="text-3xl font-black text-gray-900 italic uppercase tracking-tighter">Promotions & Staff</h1>
@@ -45,7 +43,6 @@
         </button>
     </div>
 
-    {{-- Tableau des Classes --}}
     <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/40 overflow-hidden">
         <table class="w-full text-left border-collapse">
             <thead>
@@ -61,7 +58,6 @@
             <tbody class="divide-y divide-gray-50">
                 @foreach ($classes as $classe)
                 <tr onclick="window.location='{{ route('admin.classes.show', $classe->id) }}'" class="hover:bg-red-50/20 transition-all group">
-                    {{-- Classe + Formation --}}
                     <td class="px-8 py-6">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-gray-900 text-white rounded-2xl flex items-center justify-center font-black italic shadow-lg group-hover:scale-110 transition-transform">
@@ -76,14 +72,12 @@
                         </div>
                     </td>
 
-                    {{-- Formateurs --}}
                     <td class="px-8 py-6">
                         @php
                             $principal = $classe->formateurs->firstWhere('pivot.is_principal', true);
                             $adjoints = $classe->formateurs->where('pivot.is_principal', false);
                         @endphp
 
-                        {{-- Principal --}}
                         <div class="flex items-center gap-2">
                             <span class="w-5 h-5 rounded-md bg-[#ff002b] text-white flex items-center justify-center text-[9px] font-black shadow-sm" title="Formateur Principal">P</span>
                             <span class="text-xs font-bold text-gray-700 italic">
@@ -91,7 +85,6 @@
                             </span>
                         </div>
 
-                        {{-- Adjoints --}}
                         @if ($adjoints->isNotEmpty())
                         <div class="flex -space-x-2 mt-1">
                             @foreach ($adjoints as $adj)
@@ -104,14 +97,12 @@
                         @endif
                     </td>
 
-                    {{-- Effectif --}}
                     <td class="px-8 py-6 text-center">
                         <span class="inline-flex items-center px-3 py-1 rounded-xl text-[11px] font-black {{ $classe->etudiants_count >= 25 ? 'bg-orange-50 text-orange-600' : 'bg-blue-50 text-blue-600' }}">
                             {{ $classe->etudiants_count ?? 0 }} / 25
                         </span>
                     </td>
 
-                    {{-- Status --}}
                     <td class="px-8 py-6 text-center">
                         @if ($classe->is_active)
                         <span class="inline-flex items-center px-3 py-1 rounded-xl bg-green-50 text-green-600 text-[11px] font-black">Active</span>
@@ -119,12 +110,10 @@
                         <span class="inline-flex items-center px-3 py-1 rounded-xl bg-red-50 text-red-600 text-[11px] font-black">Inactive</span>
                         @endif
                     </td>
-                    {{-- Année Étudiant --}}
                     <td class="px-8 py-6 text-center">
                         <span class="text-sm font-bold text-gray-700 italic">{{ $classe->anneDetudiant }}</span>
                     </td>
-                    {{-- Actions --}}
-                    <td class="px-8 py-6 text-right">
+                        <td class="px-8 py-6 text-right">
                         <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                             <button class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all"><i class="fas fa-edit text-xs"></i></button>
                             <button class="w-9 h-9 flex items-center justify-center rounded-xl bg-red-50 text-[#ff002b] hover:bg-[#ff002b] hover:text-white transition-all"><i class="fas fa-trash text-xs"></i></button>
@@ -137,7 +126,6 @@
     </div>
 </div>
 
-{{-- Modal Création Classe --}}
 <div id="modal-classe" class="hidden fixed inset-0 bg-gray-900/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-[3rem] shadow-2xl max-w-md w-full p-10 animate-in zoom-in duration-200">
         <h2 class="text-2xl font-black text-gray-900 italic uppercase mb-8">Nouvelle Classe</h2>
@@ -174,4 +162,3 @@ function toggleModal(id) {
 </script>
 
 @endsection
-
